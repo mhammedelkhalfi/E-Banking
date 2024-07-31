@@ -1,6 +1,6 @@
-package com.invoice.management.system.ebankingback.entities;
+package com.invoice.management.system.ebankingback.ebankingback.entities;
 
-import com.invoice.management.system.ebankingback.enums.AccountStatus;
+import com.invoice.management.system.ebankingback.ebankingback.enums.AccountStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,50 +8,20 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
-@Data
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TYPE", length = 4)
-@AllArgsConstructor
-@NoArgsConstructor
-
-public class BankAccount {
+@DiscriminatorColumn(name = "TYPE",length = 4)
+@Data @NoArgsConstructor @AllArgsConstructor
+public abstract class BankAccount {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
     private double balance;
     private Date createdAt;
+    @Enumerated(EnumType.STRING)
     private AccountStatus status;
     @ManyToOne
     private Customer customer;
-    @OneToMany(mappedBy = "bankAccount")
+
+    @OneToMany(mappedBy = "bankAccount",fetch = FetchType.LAZY)
     private List<AccountOperation> accountOperations;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

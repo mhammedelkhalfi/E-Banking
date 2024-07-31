@@ -1,16 +1,15 @@
-package com.invoice.management.system.ebankingback.entities;
+package com.invoice.management.system.ebankingback.ebankingback.entities;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
+
 @Entity
 @DiscriminatorValue("SA")
+@Data @NoArgsConstructor @AllArgsConstructor
 public class SavingAccount extends BankAccount {
     private double interestRate;
 }
