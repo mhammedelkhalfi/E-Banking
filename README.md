@@ -4,4 +4,4 @@
 A brief description of your project.
 
 ## E-Banking
-![E-Banking Screenshot](E-Banking/1.png)
+![E-Banking Screenshot](1.png)
