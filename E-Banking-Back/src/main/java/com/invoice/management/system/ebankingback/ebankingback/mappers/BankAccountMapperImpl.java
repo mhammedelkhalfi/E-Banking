@@ -1,17 +1,17 @@
 package com.invoice.management.system.ebankingback.ebankingback.mappers;
 
-import com.invoice.management.system.ebankingback.ebankingback.dtos.CustomerDTO;
-import com.invoice.management.system.ebankingback.ebankingback.dtos.AccountOperationDTO;
-import com.invoice.management.system.ebankingback.ebankingback.dtos.CurrentBankAccountDTO;
-import com.invoice.management.system.ebankingback.ebankingback.dtos.SavingBankAccountDTO;
-import com.invoice.management.system.ebankingback.ebankingback.entities.AccountOperation;
-import com.invoice.management.system.ebankingback.ebankingback.entities.CurrentAccount;
-import com.invoice.management.system.ebankingback.ebankingback.entities.Customer;
-import com.invoice.management.system.ebankingback.ebankingback.entities.SavingAccount;
+import com.invoice.management.system.ebankingback.ebankingback.dtos.*;
+import com.invoice.management.system.ebankingback.ebankingback.entities.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class BankAccountMapperImpl {
+
     public CustomerDTO fromCustomer(Customer customer){
         CustomerDTO customerDTO=new CustomerDTO();
         BeanUtils.copyProperties(customer,customerDTO);

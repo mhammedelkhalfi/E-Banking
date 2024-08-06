@@ -24,8 +24,13 @@ export class AccountsService {
     return this.http.post(this.backendHost+"/accounts/credit",data);
   }
   public transfer(accountSource: String, accountDestination: String, amount: number, description: String) {
-    let data = { accountSource, accountDestination, amount, description }; // Correction ici
+    let data = { accountSource, accountDestination, amount, description };
     return this.http.post(this.backendHost + "/accounts/transfer", data);
   }
+
+  public getAccountsByCustomerId(customerId: number){
+    return this.http.get(`${this.backendHost}/customers/${customerId}/accounts`);
+  }
+
 
 }

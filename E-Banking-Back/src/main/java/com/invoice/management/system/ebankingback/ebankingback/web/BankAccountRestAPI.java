@@ -57,4 +57,11 @@ public class BankAccountRestAPI {
     }
 
 
+    @GetMapping("/customers/{customerId}/accounts")
+    public List<BankAccountDTO> getAccountsByCustomerId(@PathVariable Long customerId) throws CustomerNotFoundException {
+        return bankAccountService.getAccountsByCustomerId(customerId);
+    }
+
+
+
 }

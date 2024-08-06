@@ -1,14 +1,17 @@
 package com.invoice.management.system.ebankingback.ebankingback.web;
 
 import com.invoice.management.system.ebankingback.ebankingback.dtos.BankAccountDTO;
+import com.invoice.management.system.ebankingback.ebankingback.entities.Customer;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import com.invoice.management.system.ebankingback.ebankingback.dtos.CustomerDTO;
 import com.invoice.management.system.ebankingback.ebankingback.exceptions.CustomerNotFoundException;
 import com.invoice.management.system.ebankingback.ebankingback.services.BankAccountService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
