@@ -1,5 +1,6 @@
 package com.invoice.management.system.ebankingback.ebankingback.web;
 
+import com.invoice.management.system.ebankingback.ebankingback.dtos.BankAccountDTO;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import com.invoice.management.system.ebankingback.ebankingback.dtos.CustomerDTO;
@@ -40,4 +41,5 @@ public class CustomerRestController {
     public void deleteCustomer(@PathVariable Long id){
         bankAccountService.deleteCustomer(id);
     }
+
 }

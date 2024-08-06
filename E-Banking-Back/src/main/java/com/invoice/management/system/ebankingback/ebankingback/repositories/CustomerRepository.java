@@ -1,6 +1,9 @@
 package com.invoice.management.system.ebankingback.ebankingback.repositories;
 
+import com.invoice.management.system.ebankingback.ebankingback.dtos.AccountOperationDTO;
+import com.invoice.management.system.ebankingback.ebankingback.entities.AccountOperation;
 import com.invoice.management.system.ebankingback.ebankingback.entities.Customer;
+import com.invoice.management.system.ebankingback.ebankingback.exceptions.CustomerNotFoundException;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
