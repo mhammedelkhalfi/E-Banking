@@ -1,0 +1,9 @@
+/* not-authorized.component.css */
+.alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 1050; /* Assurer que l'alerte est au-dessus du contenu */
+}

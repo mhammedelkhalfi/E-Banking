@@ -14,6 +14,7 @@ import { CustomerAccountsComponent } from './customer-accounts/customer-accounts
 import { LoginComponent } from './login/login.component';
 import { AdminTampletComponent } from './admin-tamplet/admin-tamplet.component';
 import {AppHttpInterceptor} from "./interceptors/app-http.interceptor";
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {AppHttpInterceptor} from "./interceptors/app-http.interceptor";
     EditCustomerComponent,
     CustomerAccountsComponent,
     LoginComponent,
-    AdminTampletComponent
+    AdminTampletComponent,
+    NotAuthorizedComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import {AppHttpInterceptor} from "./interceptors/app-http.interceptor";
   ],
   providers: [
     provideClientHydration(),
-    {provide : HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true}
+    {provide : HTTP_INTERCEPTORS, useClass : AppHttpInterceptor, multi : true}
   ],
   bootstrap: [AppComponent]
 })

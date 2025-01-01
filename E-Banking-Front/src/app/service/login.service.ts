@@ -22,6 +22,8 @@ export class LoginService {
     let params = new HttpParams()
       .set("username", username)
       .set("password", password);
+    //console.log(password);
+    //console.log(this.accessToken);
     return this.http.post("http://localhost:8085/auth/login", params, option);
   }
 
@@ -32,5 +34,15 @@ export class LoginService {
     this.username = decodedJwt.sub;
     this.roles=decodedJwt.scope;
 
+    //console.log(this.username);
+    //console.log(this.roles);
+    //console.log(this.isAuthenticated);
+  }
+
+  logout() {
+    this.isAuthenticated=false;
+    this.accessToken="undefined";
+    this.username=undefined;
+    this.roles=undefined;
   }
 }
